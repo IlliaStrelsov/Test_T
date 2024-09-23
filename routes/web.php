@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DataController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::put('/data', [DataController::class, 'data']);
+Route::get('/data', [DataController::class, 'data']);
+Route::delete('/data', [DataController::class, 'data']);
+Route::get('/jobs', [JobController::class, 'listJobs']);
